@@ -1,11 +1,11 @@
-- name:     Tee
-  pronouns: they/them
-  link:     http://teetopor.art/
-  teacher:  true
-- name:     Michael
-  pronouns: he/him
-  link:     https://michaelfehrenbach.com
-  teacher:  true
+- name:       Tee
+  pronouns:   they/them
+  link:       http://teetopor.art/
+  instructor: true
+- name:       Michael
+  pronouns:   he/him
+  link:       https://michaelfehrenbach.com
+  instructor: true
 - name:     Anjali
 - name:     Yun soo
 - name:     Hailey

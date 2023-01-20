@@ -9,6 +9,8 @@ defaults:
 livereload: true
 permalink: /:basename/
 sass:
-  sass_dir: assets/styles
+  sass_dir:  assets/styles
+  sourcemap: never
+  style:     expanded
 theme: null
 timezone: America/New_York

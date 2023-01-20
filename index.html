@@ -6,47 +6,53 @@ title: 'Core 2: Interaction'
 
 <h1>{{ page.title }}</h1>
 
+<details>
+	<summary>
+		<h2>Plans</h2>
+	</summary>
+	<ul>
+		{% for plan in site.plans %}
+			<li>
+				<h3>
+					Week {{- plan.title -}}
+				</h3>
+			</li>
+		{% endfor %}
+	</ul>
+</details>
 
+<details>
+	<summary>
+		<h2>Projects</h2>
+	</summary>
+	<ul>
+		{% for project in site.projects %}
+			<li>
+				<h3>
+					{{- project.title -}}
+				</h3>
+			</li>
+		{% endfor %}
+	</ul>
+</details>
 
-<h2>Plans</h2>
-<ul>
-	{% for plan in site.plans %}
-		<li>
-			<h3>
-				Week {{- plan.title -}}
-			</h3>
-		</li>
-	{% endfor %}
-</ul>
-
-
-
-<h2>Projects</h2>
-<ul>
-	{% for project in site.projects %}
-		<li>
-			<h3>
-				{{- project.title -}}
-			</h3>
-		</li>
-	{% endfor %}
-</ul>
-
-
-<h2>People</h2>
-<ul>
-	{% assign people = site.data.people | sort: 'name' %}
-	{% for person in people %}
-		<li>
-			<h3>
-				{{- person.name -}}
-				{%- if person.pronouns %} ({{- person.pronouns -}}){% endif -%}
-				{%- if person.teacher %}, Instructor{% endif -%}
-			</h3>
-			{% if person.link %}
-				<a href="{{- person.link -}}">{{- person.link -}}</a>
-			{% endif %}
-		</li>
-	{% endfor %}
-</ul>
-
+<details>
+	<summary>
+		<h2>People</h2>
+	</summary>
+	<ul>
+		{% assign people = site.data.people | sort: 'name' %}
+		{% for person in people %}
+			<li>
+				<h3>
+					{{- person.name -}}
+					{%- if person.pronouns %} ({{- person.pronouns -}}){% endif -%}
+					{%- if person.teacher %}, Instructor{% endif -%}
+				</h3>
+				{% if person.link %}
+					<a href="{{- person.link -}}">{{- person.link -}}</a>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+</details>

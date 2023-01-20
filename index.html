@@ -11,7 +11,19 @@ title: 'Core 2: Interaction'
 		<h2>Plans</h2>
 	</summary>
 	<ul>
-		{% for plan in site.plans %}
+		{% comment %} Liquid/Jekyll lack a natural/numeric sort. {% endcomment %}
+		{% assign all_plans = site.plans %}
+		{% assign low_plans = '' | split: ',' %} {% comment %} This is also dumb, Liquid. {% endcomment %}
+		{% assign high_plans = '' | split: ',' %}
+		{% for plan in all_plans %}
+			{% if plan.title.size == 1 %}
+				{% assign low_plans = low_plans | push: plan %}
+			{% else %}
+				{% assign high_plans = high_plans | push: plan %}
+			{% endif %}
+		{% endfor %}
+		{% assign plans = low_plans | concat: high_plans %}
+		{% for plan in plans %}
 			<li>
 				<h3>
 					Week {{- plan.title -}}

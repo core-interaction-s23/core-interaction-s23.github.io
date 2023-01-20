@@ -4,70 +4,72 @@ title: 'Core 2: Interaction'
 
 
 
-<h1>{{ page.title }}</h1>
+<header>
+	<h1>{{ page.title }}</h1>
+</header>
 
-<details>
-	<summary>
-		<h2>Plans</h2>
-	</summary>
-	<ul>
-		{% comment %} Liquid/Jekyll lack a natural/numeric sort. {% endcomment %}
-		{% assign all_plans = site.plans %}
-		{% assign low_plans = '' | split: ',' %} {% comment %} This is also dumb, Liquid. {% endcomment %}
-		{% assign high_plans = '' | split: ',' %}
-		{% for plan in all_plans %}
-			{% if plan.slug.size == 1 %}
-				{% assign low_plans = low_plans | push: plan %}
-			{% else %}
-				{% assign high_plans = high_plans | push: plan %}
-			{% endif %}
-		{% endfor %}
-		{% assign plans = low_plans | concat: high_plans %}
-		{% for plan in plans %}
-			<li>
-				<h3>
-					Week {{- plan.slug -}}
-				</h3>
-				{{ plan.content }}
-			</li>
-		{% endfor %}
-	</ul>
-</details>
-
-<details>
-	<summary>
-		<h2>Projects</h2>
-	</summary>
-	<ul>
-		{% for project in site.projects %}
-			<li>
-				<h3>
-					{{- project.title -}}
-				</h3>
-				{{ project.content }}
-			</li>
-		{% endfor %}
-	</ul>
-</details>
-
-<details>
-	<summary>
-		<h2>People</h2>
-	</summary>
-	<button>Shuffle</button>
-	<ul id="people">
-		{% assign people = site.data.people | sort: 'name' %}
-		{% for person in people %}
-			<li>
-				<h3>
-					{{- person.name -}}
-					{%- if person.pronouns %} ({{- person.pronouns -}}){% endif -%}
-					{%- if person.teacher %}, Instructor{% endif -%}
-				</h3>
-				{% if person.link %}
-					<a href="{{- person.link -}}">{{- person.link -}}</a>
+<main>
+	<details>
+		<summary>
+			<h2>Plans</h2>
+		</summary>
+		<ul>
+			{% comment %} Liquid/Jekyll lack a natural/numeric sort. {% endcomment %}
+			{% assign all_plans = site.plans %}
+			{% assign low_plans = '' | split: ',' %} {% comment %} This is also dumb, Liquid. {% endcomment %}
+			{% assign high_plans = '' | split: ',' %}
+			{% for plan in all_plans %}
+				{% if plan.slug.size == 1 %}
+					{% assign low_plans = low_plans | push: plan %}
+				{% else %}
+					{% assign high_plans = high_plans | push: plan %}
 				{% endif %}
-			</li>
-		{% endfor %}
-	</ul>
-</details>
+			{% endfor %}
+			{% assign plans = low_plans | concat: high_plans %}
+			{% for plan in plans %}
+				<li>
+					<h3>
+						Week {{- plan.slug -}}
+					</h3>
+					{{ plan.content }}
+				</li>
+			{% endfor %}
+		</ul>
+	</details>
+	<details>
+		<summary>
+			<h2>Projects</h2>
+		</summary>
+		<ul>
+			{% for project in site.projects %}
+				<li>
+					<h3>
+						{{- project.title -}}
+					</h3>
+					{{ project.content }}
+				</li>
+			{% endfor %}
+		</ul>
+	</details>
+	<details>
+		<summary>
+			<h2>People</h2>
+		</summary>
+		<button>Shuffle</button>
+		<ul id="people">
+			{% assign people = site.data.people | sort: 'name' %}
+			{% for person in people %}
+				<li>
+					<h3>
+						{{- person.name -}}
+						{%- if person.pronouns %} ({{- person.pronouns -}}){% endif -%}
+						{%- if person.teacher %}, Instructor{% endif -%}
+					</h3>
+					{% if person.link %}
+						<a href="{{- person.link -}}">{{- person.link -}}</a>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	</details>
+</main>

@@ -14,6 +14,8 @@
 	--font--base: 1.6rem;
 	--spacing:    calc(var(--font--base) * 1.5);
 
+	--color--link: tomato;
+
 	@include breakpoint(768) { --font--base: 2.4rem }
 	@include breakpoint(1024) { --font--base: 2.8rem }
 }
@@ -24,3 +26,16 @@ body {
 	font-size: var(--font--base);
 	padding:   var(--spacing);
 }
+
+address,
+main,
+details,
+ul,
+li,
+button {
+	margin-top: var(--spacing);
+}
+
+summary { font-style: italic }
+
+a, button { color: var(--color--link) }

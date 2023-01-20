@@ -4,8 +4,9 @@
 
 
 
-@import "utilities";
-@import 'typography';
+@use "utilities" as *;
+
+@use 'typography';
 
 
 

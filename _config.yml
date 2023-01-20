@@ -1,0 +1,9 @@
+defaults:
+  - scope:
+      path: index
+    values:
+      layout: default
+livereload: true
+permalink: /:basename/
+theme: null
+timezone: America/New_York

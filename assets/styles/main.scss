@@ -32,9 +32,9 @@ main,
 details,
 ul,
 li,
-button {
-	margin-top: var(--spacing);
-}
+button { margin-top: var(--spacing) }
+
+p { margin-top: calc(var(--spacing) / 3) }
 
 summary { font-style: italic }
 

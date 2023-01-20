@@ -1,7 +1,6 @@
-baseurl: ''
 defaults:
   - scope:
-      path: index
+      path: ''
     values:
       layout: default
 livereload: true

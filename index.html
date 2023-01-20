@@ -54,7 +54,8 @@ title: 'Core 2: Interaction'
 	<summary>
 		<h2>People</h2>
 	</summary>
-	<ul>
+	<button>Shuffle</button>
+	<ul id="people">
 		{% assign people = site.data.people | sort: 'name' %}
 		{% for person in people %}
 			<li>
@@ -70,3 +71,24 @@ title: 'Core 2: Interaction'
 		{% endfor %}
 	</ul>
 </details>
+
+
+
+{% comment %} Move this to a separate file. {% endcomment %}
+<script>
+	const shufflePeople = () => {
+		const people = document.getElementById('people')
+
+		for (index = 0; index < people.children.length; index++) {
+			people.appendChild(people.children[Math.random() * index | 0])
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		shufflePeople()
+
+		const shuffle = document.querySelector('button')
+
+		shuffle.onclick = () => shufflePeople()
+	})
+</script>

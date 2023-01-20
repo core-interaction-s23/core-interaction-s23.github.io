@@ -5,4 +5,16 @@ title: 'Core 2: Interaction'
 
 
 <h1>{{ page.title }}</h1>
-<p>Hello, world!</p>
+
+
+
+{% assign people = site.data.people | sort: 'name' %}
+<h2>People</h2>
+<ul>
+	{% for person in people %}
+		<li>
+			<h3>{{person.name}}</h3>
+		</li>
+	{% endfor %}
+</ul>
+

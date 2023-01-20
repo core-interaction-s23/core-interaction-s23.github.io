@@ -9,11 +9,28 @@ title: 'Core 2: Interaction'
 
 
 <h2>Plans</h2>
+<ul>
+	{% for plan in site.plans %}
+		<li>
+			<h3>
+				Week {{- plan.title -}}
+			</h3>
+		</li>
+	{% endfor %}
+</ul>
 
 
 
 <h2>Projects</h2>
-
+<ul>
+	{% for project in site.projects %}
+		<li>
+			<h3>
+				{{- project.title -}}
+			</h3>
+		</li>
+	{% endfor %}
+</ul>
 
 
 <h2>People</h2>

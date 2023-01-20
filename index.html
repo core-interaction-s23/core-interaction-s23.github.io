@@ -8,9 +8,17 @@ title: 'Core 2: Interaction'
 
 
 
-{% assign people = site.data.people | sort: 'name' %}
+<h2>Plans</h2>
+
+
+
+<h2>Projects</h2>
+
+
+
 <h2>People</h2>
 <ul>
+	{% assign people = site.data.people | sort: 'name' %}
 	{% for person in people %}
 		<li>
 			<h3>

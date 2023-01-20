@@ -50,19 +50,19 @@ $default-font-fize: 16;
 // Flexible breaks.
 @mixin breakpoint($break) {
 	@if $break == 320 { // These are sadly the exception, now.
-		@media (max-width: #{calc(374 / $default-font-fize)}em) {
+		@media (max-width: #{374 / $default-font-fize}em) {
 			@content;
 		}
 	}
 	@else if $break == 768 {
 		@media
-			(min-width: #{calc($break / $default-font-fize)}em) and (min-height: #{calc(480 / $default-font-fize)}em), // Clear landscape iPhones.
-			(min-width: #{calc(930 / $default-font-fize)}em) {
+			(min-width: #{$break / $default-font-fize}em) and (min-height: #{480 / $default-font-fize}em), // Clear landscape iPhones.
+			(min-width: #{930 / $default-font-fize}em) {
 			@content;
 		}
 	}
 	@else {
-		@media (min-width: #{calc($break / $default-font-fize)}em) {
+		@media (min-width: #{$break / $default-font-fize}em) {
 			@content;
 		}
 	}
@@ -72,22 +72,22 @@ $default-font-fize: 16;
 	@if $break {
 		@media
 			(orientation: landscape),
-			(min-width: #{calc($break / $default-font-fize)}em) {
+			(min-width: #{$break / $default-font-fize}em) {
 			@content;
 		}
 	}
 	@else {
 		@media
 			(orientation: landscape), // Actually landscape.
-			(min-width: #{calc(568 / $default-font-fize)}em) and (min-height: #{calc(480 / $default-font-fize)}em), // Clear landscape iPhones.
-			(min-width: #{calc(930 / $default-font-fize)}em) {
+			(min-width: #{568 / $default-font-fize}em) and (min-height: #{480 / $default-font-fize}em), // Clear landscape iPhones.
+			(min-width: #{930 / $default-font-fize}em) {
 			@content;
 		}
 	}
 }
 
 @mixin tall {
-	@media (min-height: #{calc(1024 / $default-font-fize)}em) {
+	@media (min-height: #{1024 / $default-font-fize}em) {
 		@content;
 	}
 }

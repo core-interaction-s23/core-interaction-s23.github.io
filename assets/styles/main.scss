@@ -6,6 +6,21 @@
 
 @use "utilities" as *;
 
+@use 'typography';
+
+
+
+:root {
+	--font--base: 1.6rem;
+	--spacing:    calc(var(--font--base) * 1.5);
+
+	@include breakpoint(768) { --font--base: 2.4rem }
+	@include breakpoint(1024) { --font--base: 2.8rem }
+}
+
+
+
 body {
-	color: tomato; /* Testing. */
+	font-size: var(--font--base);
+	padding:   var(--spacing);
 }

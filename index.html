@@ -48,9 +48,7 @@ half:
 			{%- include sorted_plans.html -%}
 			{% for plan in plans %}
 				<li>
-					<h3>
-						Week {{- plan.slug -}}
-					</h3>
+					<h3>Week {{- plan.slug -}}</h3>
 					{%- include auto_date.html -%}
 					<time>{{ dates }}</time>
 					{{ plan.content }}
@@ -65,9 +63,8 @@ half:
 		<ul>
 			{% for project in site.projects %}
 				<li>
-					<h3>
-						{{- project.title -}}
-					</h3>
+					<h3>{{- project.title -}}</h3>
+					<time>Due {{ project.date | date: '%B %-d' }}</time>
 					{{ project.content }}
 				</li>
 			{% endfor %}

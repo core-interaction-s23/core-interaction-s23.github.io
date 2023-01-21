@@ -51,7 +51,7 @@ half:
 					<h3>Week {{- plan.slug -}}</h3>
 					{%- include auto_date.html -%}
 					<time>{{ dates }}</time>
-					{{ plan.content }}
+					{{ plan.content | replace: '<h1', '<h4' | replace: 'h1>', 'h4>' | replace: '<h2', '<h5' | replace: 'h2>', 'h5>' | replace: '<h3', '<h6' | replace: 'h3>', 'h6>' }}
 				</li>
 			{% endfor %}
 		</ul>
@@ -65,7 +65,7 @@ half:
 				<li>
 					<h3>{{- project.title -}}</h3>
 					<time>Due {{ project.date | date: '%B %-d' }}</time>
-					{{ project.content }}
+					{{ project.content | replace: '<h1', '<h4' | replace: 'h1>', 'h4>' | replace: '<h2', '<h5' | replace: 'h2>', 'h5>' | replace: '<h3', '<h6' | replace: 'h3>', 'h6>' }}
 				</li>
 			{% endfor %}
 		</ul>

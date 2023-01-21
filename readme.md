@@ -18,8 +18,8 @@ Add `--unpublished` to show “draft” plans/projects.
 
 - [x] Automatically increment dates for weeks/plans
 - [x] Add due dates to projects
+- [x] Decrease semantic heading levels on landing lists
 - [ ] Add spring break divider block
-- [ ] Decrease semantic heading levels on landing lists
 - [ ] Nicely transition height when toggling `details`
 - [ ] Bring in some basic Markdown styles/spacing
 - [ ] Randomize the class list when open/closed

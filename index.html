@@ -20,6 +20,13 @@ half:
       Michael Fehrenbach
       [https://michaelfehrenbach.com](https://michaelfehrenbach.com)
       [fehrenbm@newschool.edu](mailto:fehrenbm@newschool.edu)
+links:
+  - name: GitHub
+    url: http://github.com/core-interaction-s23
+  - name: Google
+    url: https://drive.google.com/drive/folders/1OlAaxMEYZY6QwwBISAgRKa1yCsrRr6xi
+  - name: Zoom
+    url: https://NewSchool.zoom.us/j/96982505682
 ---
 
 
@@ -38,6 +45,14 @@ half:
 			{% endfor %}
 		</ul>
 	</address>
+	<ul>
+		{% for link in page.links %}
+			<li>
+				<h3>{{ link.name }}</h3>
+				<a href="{{- link.url -}}">{{- link.url -}}</a>
+			</li>
+		{% endfor %}
+	</ul>
 </header>
 <main>
 	<details>

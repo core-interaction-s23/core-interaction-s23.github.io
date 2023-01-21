@@ -1,0 +1,27 @@
+{%- if plan.date != site.time -%}
+	{%- assign date = plan.date | date: '%s' -%}
+{%- else -%}
+	{%- assign date = nil -%}
+	{%- assign dates = nil -%}
+{%- endif -%}
+{%- if date -%}
+	{%- assign first_month = date | date: '%B' | append: ' ' -%}
+	{%- assign first_day = date | date: '%-d' -%}
+	{%- assign first_date = first_month | append: first_day -%}
+	{%- assign second_date = date | plus: 172800 -%} {% comment %} Two days. {% endcomment %}
+	{%- assign third_date = second_date | plus: 86400 -%} {% comment %} One day. {% endcomment %}
+	{%- assign second_month = second_date | date: '%B' | append: ' ' -%}
+	{%- if second_month == first_month -%}
+		{%- assign second_month = '' -%}
+	{%- endif -%}
+	{%- assign second_day = second_date | date: '%-d' -%}
+	{%- assign second_date = second_month | append: second_day -%}
+	{%- assign third_month = third_date | date: '%B' | append: ' ' -%}
+	{%- if third_month == first_month or third_month == second_month -%}
+		{%- assign third_month = '' -%}
+	{%- endif -%}
+	{%- assign third_day = third_date | date: '%-d' -%}
+	{%- assign third_date = third_month | append: third_day -%}
+	{%- assign dates = first_date | append: ', ' | append: second_date | append: ', ' | append: third_date -%}
+{%- endif -%}
+

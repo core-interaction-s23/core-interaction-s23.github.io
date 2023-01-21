@@ -51,6 +51,8 @@ half:
 					<h3>
 						Week {{- plan.slug -}}
 					</h3>
+					{%- include auto_date.html -%}
+					<time>{{ dates }}</time>
 					{{ plan.content }}
 				</li>
 			{% endfor %}

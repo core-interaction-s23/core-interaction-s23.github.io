@@ -34,24 +34,24 @@ links:
 
 
 <header>
-	<h1>{{ page.title }}</h1>
-	<h2>{{ page.subtitle }}</h2>
+	<section>
+		<h1>{{ page.title }}</h1>
+		<h2>{{ page.subtitle }}</h2>
+	</section>
 	<address>
-		<ul>
-			{% for half in page.half %}
-				<li>
-					<h3>{{ half.title }}</h3>
-					{{ half.info | newline_to_br | markdownify }}
-					{{ half.instructor | newline_to_br | markdownify }}
-				</li>
-			{% endfor %}
-		</ul>
+		{% for half in page.half %}
+			<section>
+				<h3>{{ half.title }}</h3>
+				{{ half.info | newline_to_br | markdownify }}
+				{{ half.instructor | newline_to_br | markdownify }}
+			</section>
+		{% endfor %}
 	</address>
 	<ul>
 		{% for link in page.links %}
 			<li>
 				<h3>{{ link.name }}</h3>
-				<p><a href="{{- link.url -}}">{{- link.url | truncate: 40 -}}</a></p>
+				<p><a href="{{- link.url -}}">{{- link.url | truncate: 44 -}}</a></p>
 			</li>
 		{% endfor %}
 	</ul>

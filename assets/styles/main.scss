@@ -23,10 +23,30 @@
 
 
 body {
+	margin:         0 auto;
+	max-width:      102.4rem;
 	padding:        var(--spacing);
-	padding-bottom: 50vh;
+	padding-bottom: 33vh;
 }
 
 a, button { color: var(--color--link) }
 
 button { cursor: pointer }
+
+body,
+header,
+address,
+main {
+	display: grid;
+	gap:     var(--spacing);
+}
+
+address {
+	@include breakpoint(768) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+p a {
+	word-break: break-word;
+}

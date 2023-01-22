@@ -14,7 +14,8 @@
 	--font--base: 1.6rem;
 	--spacing:    calc(var(--font--base) * 1.5);
 
-	--color--link: tomato;
+	--color--link:  tomato;
+	--color--faded: darkgray;
 
 	@include breakpoint(768) { --font--base: 2.4rem }
 	@include breakpoint(1024) { --font--base: 2.8rem }
@@ -25,8 +26,10 @@
 body {
 	margin:         0 auto;
 	max-width:      102.4rem;
-	padding:        var(--spacing);
 	padding-bottom: 33vh;
+	padding-left:   var(--spacing);
+	padding-right:  var(--spacing);
+	padding-top:    calc(var(--spacing) * 2);
 }
 
 a, button { color: var(--color--link) }
@@ -35,16 +38,21 @@ button { cursor: pointer }
 
 body,
 header,
-address,
 main {
 	display: grid;
-	gap:     var(--spacing);
+	gap:     calc(var(--spacing) * 2);
 }
 
 address {
-	@include breakpoint(768) {
-		grid-template-columns: repeat(2, 1fr);
+	display: grid;
+	gap:     var(--spacing);
+
+	h3 {
+		color:         var(--color--faded);
+		margin-bottom: var(--spacing);
 	}
+
+	@include breakpoint(768) { grid-template-columns: repeat(2, 1fr) }
 }
 
 p a {

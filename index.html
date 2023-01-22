@@ -51,7 +51,7 @@ links:
 		{% for link in page.links %}
 			<li>
 				<h3>{{ link.name }}</h3>
-				<a href="{{- link.url -}}">{{- link.url -}}</a>
+				<p><a href="{{- link.url -}}">{{- link.url | truncate: 40 -}}</a></p>
 			</li>
 		{% endfor %}
 	</ul>
@@ -67,7 +67,7 @@ links:
 				<li>
 					<h3>Week {{- plan.slug -}}</h3>
 					{%- include auto_date.html -%}
-					<time>{{ dates }}</time>
+					<p><time>{{ dates }}</time></p>
 					{{ plan.content | replace: '<h1', '<h4' | replace: 'h1>', 'h4>' | replace: '<h2', '<h5' | replace: 'h2>', 'h5>' | replace: '<h3', '<h6' | replace: 'h3>', 'h6>' }}
 				</li>
 			{% endfor %}
@@ -81,7 +81,7 @@ links:
 			{% for project in site.projects %}
 				<li>
 					<h3>{{- project.title -}}</h3>
-					<time>Due {{ project.date | date: '%B %-d' }}</time>
+					<p><time>Due {{ project.date | date: '%B %-d' }}</time></p>
 					{{ project.content | replace: '<h1', '<h4' | replace: 'h1>', 'h4>' | replace: '<h2', '<h5' | replace: 'h2>', 'h5>' | replace: '<h3', '<h6' | replace: 'h3>', 'h6>' }}
 				</li>
 			{% endfor %}
@@ -91,7 +91,9 @@ links:
 		<summary>
 			<h2>People</h2>
 		</summary>
-		<button>Shuffle</button>
+		<button>
+			<p>Shuffle</p>
+		</button>
 		<ul id="people">
 			{% assign people = site.data.people | sort: 'name' %}
 			{% for person in people %}
@@ -102,7 +104,7 @@ links:
 						{%- if person.instructor %}, Instructor{% endif -%}
 					</h3>
 					{% if person.link %}
-						<a href="{{- person.link -}}">{{- person.link -}}</a>
+						<p><a href="{{- person.link -}}">{{- person.link -}}</a></p>
 					{% endif %}
 				</li>
 			{% endfor %}

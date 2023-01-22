@@ -8,7 +8,7 @@ half:
       2 W 13th, Room 1013
       Tuesdays/Thursdays, 9–11:40am
     instructor: |-
-      Tee Topor
+      Tee Topor *(they/them)*
       [http://teetopor.art/](http://teetopor.art/)
       [topot878@newschool.edu](mailto:topot878@newschool.edu)
   - title: Lab
@@ -17,7 +17,7 @@ half:
       2 W 13th, Room 801
       Fridays, 9–11:40am
     instructor: |-
-      Michael Fehrenbach
+      Michael Fehrenbach *(he/him)*
       [https://michaelfehrenbach.com](https://michaelfehrenbach.com)
       [fehrenbm@newschool.edu](mailto:fehrenbm@newschool.edu)
 links:
@@ -104,8 +104,7 @@ links:
 				<li>
 					<h3>
 						{{- person.name -}}
-						{%- if person.pronouns %} ({{- person.pronouns -}}){% endif -%}
-						{%- if person.instructor %}, Instructor{% endif -%}
+						{%- if person.pronouns %} <em>({{- person.pronouns -}})</em>{% endif -%}
 					</h3>
 					{% if person.link %}
 						<p><a href="{{- person.link -}}">{{- person.link -}}</a></p>

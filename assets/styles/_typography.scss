@@ -20,13 +20,13 @@ em em { font-style: normal }
 
 del { font-style: line-through }
 
-nobr, .nowrap {	white-space: nowrap }
+nobr, .nowrap { white-space: nowrap }
 
 body {
 	font-family:           'Times New Roman', 'Times', serif;
 	font-feature-settings: 'hlig', 'dlig', 'zero', 'kern', 'medi';
 	font-size:             var(--font--base);
 	font-variant:          historical-ligatures;
-	letter-spacing:        -0.015em;
+	letter-spacing:        -0.02em;
 	line-height:           1.1;
 }

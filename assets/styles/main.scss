@@ -35,8 +35,9 @@ body {
 a, button { color: var(--color--link) }
 
 button {
-	cursor:     pointer;
-	margin-top: var(--spacing);
+	cursor:        pointer;
+	font-size:     0.9em;
+	margin-bottom: var(--spacing);
 }
 
 p a {

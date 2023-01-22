@@ -95,6 +95,9 @@ links:
 	</section>
 	<section>
 		<h2>People</h2>
+		<button>
+			<p>⇅</p>
+		</button>
 		<menu id="people">
 			{% assign people = site.data.people | sort: 'name' %}
 			{% for person in people %}
@@ -110,8 +113,5 @@ links:
 				</li>
 			{% endfor %}
 		</menu>
-		<button>
-			<p>Shuffle</p>
-		</button>
 	</section>
 </main>

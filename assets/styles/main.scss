@@ -23,22 +23,8 @@
 
 
 body {
-	padding: var(--spacing);
+	padding:        var(--spacing);
+	padding-bottom: 50vh;
 }
-
-address,
-main,
-details,
-ul,
-li,
-button { margin-top: var(--spacing) }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p { margin-top: calc(var(--spacing) / 3) }
 
 a, button { color: var(--color--link) }

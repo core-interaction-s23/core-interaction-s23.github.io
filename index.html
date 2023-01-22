@@ -57,10 +57,8 @@ links:
 	</ul>
 </header>
 <main>
-	<details>
-		<summary>
-			<h2>Plans</h2>
-		</summary>
+	<section>
+		<h2>Plans</h2>
 		<ul>
 			{%- include sorted_plans.html -%}
 			{% for plan in plans %}
@@ -72,11 +70,9 @@ links:
 				</li>
 			{% endfor %}
 		</ul>
-	</details>
-	<details>
-		<summary>
-			<h2>Projects</h2>
-		</summary>
+	</section>
+	<section>
+		<h2>Projects</h2>
 		<ul>
 			{% for project in site.projects %}
 				<li>
@@ -86,11 +82,9 @@ links:
 				</li>
 			{% endfor %}
 		</ul>
-	</details>
-	<details>
-		<summary>
-			<h2>People</h2>
-		</summary>
+	</section>
+	<section>
+		<h2>People</h2>
 		<button>
 			<p>Shuffle</p>
 		</button>
@@ -109,5 +103,5 @@ links:
 				</li>
 			{% endfor %}
 		</ul>
-	</details>
+	</section>
 </main>

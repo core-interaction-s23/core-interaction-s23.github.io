@@ -37,7 +37,6 @@ a, button { color: var(--color--link) }
 button { cursor: pointer }
 
 body,
-header,
 main {
 	display: grid;
 	gap:     calc(var(--spacing) * 2);

@@ -34,10 +34,10 @@ links:
 
 
 <header>
-	<section>
 		<h1>{{ page.title }}</h1>
 		<h2>{{ page.subtitle }}</h2>
-	</section>
+</header>
+<main>
 	<address>
 		{% for half in page.half %}
 			<section>
@@ -47,16 +47,16 @@ links:
 			</section>
 		{% endfor %}
 	</address>
-	<ul>
-		{% for link in page.links %}
-			<li>
-				<h3>{{ link.name }}</h3>
-				<p><a href="{{- link.url -}}">{{- link.url | truncate: 44 -}}</a></p>
-			</li>
-		{% endfor %}
-	</ul>
-</header>
-<main>
+	<section>
+		<ul>
+			{% for link in page.links %}
+				<li>
+					<h3>{{ link.name }}</h3>
+					<p><a href="{{- link.url -}}">{{- link.url | truncate: 44 -}}</a></p>
+				</li>
+			{% endfor %}
+		</ul>
+	</section>
 	<section>
 		<h2>Plans</h2>
 		<ul>

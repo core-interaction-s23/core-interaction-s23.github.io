@@ -48,14 +48,14 @@ links:
 		{% endfor %}
 	</address>
 	<section>
-		<ul>
+		<menu>
 			{% for link in page.links %}
 				<li>
 					<h3>{{ link.name }}</h3>
 					<p><a href="{{- link.url -}}">{{- link.url | truncate: 44 -}}</a></p>
 				</li>
 			{% endfor %}
-		</ul>
+		</menu>
 	</section>
 	<section>
 		<h2>Plans</h2>
@@ -85,7 +85,7 @@ links:
 	</section>
 	<section>
 		<h2>People</h2>
-		<ul id="people">
+		<menu id="people">
 			{% assign people = site.data.people | sort: 'name' %}
 			{% for person in people %}
 				<li>
@@ -99,7 +99,7 @@ links:
 					{% endif %}
 				</li>
 			{% endfor %}
-		</ul>
+		</menu>
 		<button>
 			<p>Shuffle</p>
 		</button>

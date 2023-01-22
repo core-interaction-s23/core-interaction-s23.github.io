@@ -34,10 +34,20 @@ body {
 
 a, button { color: var(--color--link) }
 
-button { cursor: pointer }
+button {
+	cursor:     pointer;
+	margin-top: var(--spacing);
+}
+
+p a {
+	word-break: break-word;
+}
+
+
 
 body,
-main {
+main,
+section > ul {
 	display: grid;
 	gap:     calc(var(--spacing) * 2);
 }
@@ -46,14 +56,16 @@ address {
 	display: grid;
 	gap:     var(--spacing);
 
-	h3 {
-		color:         var(--color--faded);
-		margin-bottom: var(--spacing);
-	}
-
 	@include breakpoint(768) { grid-template-columns: repeat(2, 1fr) }
 }
 
-p a {
-	word-break: break-word;
+address h3,
+section h2 {
+	color:         var(--color--faded);
+	margin-bottom: var(--spacing);
+}
+
+menu {
+	display: grid;
+	gap:     calc(var(--spacing) / 2);
 }

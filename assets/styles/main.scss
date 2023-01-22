@@ -23,8 +23,7 @@
 
 
 body {
-	font-size: var(--font--base);
-	padding:   var(--spacing);
+	padding: var(--spacing);
 }
 
 address,
@@ -41,7 +40,5 @@ h4,
 h5,
 h6,
 p { margin-top: calc(var(--spacing) / 3) }
-
-summary { font-style: italic }
 
 a, button { color: var(--color--link) }

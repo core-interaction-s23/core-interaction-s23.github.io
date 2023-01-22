@@ -45,11 +45,23 @@ p a {
 
 
 
-body,
-main,
-section > ul {
+body {
 	display: grid;
 	gap:     calc(var(--spacing) * 2);
+}
+
+main {
+	display: grid;
+	gap:     calc(var(--spacing) * 4);
+}
+
+main > section:first-of-type {
+	margin-top: calc(var(--spacing) * -2); // It was easier.
+}
+
+section > ul {
+	display: grid;
+	gap:     var(--spacing);
 }
 
 address {
@@ -70,8 +82,6 @@ menu {
 	gap:     calc(var(--spacing) / 2);
 }
 
-
-
 summary {
 	cursor:       pointer;
 	display:      inline-block;
@@ -91,10 +101,19 @@ details summary time:after {
 
 details[open] summary time:after {
 	content:   '–';
-	transform: translate(0.02em, -0.01em);
+	transform: translate(0.1em, -0.01em);
 }
 
 time {
 	font-style:  italic;
 	white-space: nowrap;
+}
+
+article {
+	margin-top:    var(--spacing);
+	margin-bottom: calc(var(--spacing) * 2);
+}
+
+section > ul	li:last-child article {
+	margin-bottom: initial; // No extra spacing on last one.
 }

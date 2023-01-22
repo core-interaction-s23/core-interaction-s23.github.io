@@ -110,10 +110,18 @@ time {
 }
 
 article {
-	margin-top:    var(--spacing);
-	margin-bottom: calc(var(--spacing) * 2);
+	margin-top:    calc(var(--spacing) * 2);
+	margin-bottom: calc(var(--spacing) * 3);
 }
 
 section > ul	li:last-child article {
 	margin-bottom: initial; // No extra spacing on last one.
 }
+
+
+
+article * { margin-top: var(--spacing) }
+
+article h4,
+article h5,
+article h6 { margin-top: calc(var(--spacing) * 2) }

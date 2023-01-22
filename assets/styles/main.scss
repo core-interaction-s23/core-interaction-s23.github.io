@@ -69,3 +69,32 @@ menu {
 	display: grid;
 	gap:     calc(var(--spacing) / 2);
 }
+
+
+
+summary {
+	cursor:       pointer;
+	display:      inline-block;
+	margin-right: auto;
+	user-select:  none;
+}
+
+details summary time:after {
+	color:        var(--color--link);
+	content:      '+';
+	display:      inline-block;
+	font-size:    1.2em;
+	margin-left:  calc(var(--spacing) / 2);
+	transform:    translate(0, 0.075em);
+	width:        1ch;
+}
+
+details[open] summary time:after {
+	content:   '–';
+	transform: translate(0.02em, -0.01em);
+}
+
+time {
+	font-style:  italic;
+	white-space: nowrap;
+}

@@ -63,10 +63,15 @@ links:
 			{%- include sorted_plans.html -%}
 			{% for plan in plans %}
 				<li>
-					<h3>Week {{- plan.slug -}}</h3>
-					{%- include auto_date.html -%}
-					<p><time>{{ dates }}</time></p>
-					{{ plan.content | replace: '<h1', '<h4' | replace: 'h1>', 'h4>' | replace: '<h2', '<h5' | replace: 'h2>', 'h5>' | replace: '<h3', '<h6' | replace: 'h3>', 'h6>' }}
+					<details>
+						{%- include auto_date.html -%}
+						<summary>
+							<h3>Week {{- plan.slug }} — <time>{{ dates }}</time></h3>
+						</summary>
+						<article>
+							{{ plan.content | replace: '<h1', '<h4' | replace: 'h1>', 'h4>' | replace: '<h2', '<h5' | replace: 'h2>', 'h5>' | replace: '<h3', '<h6' | replace: 'h3>', 'h6>' }}
+						</article>
+					</details>
 				</li>
 			{% endfor %}
 		</ul>
@@ -76,9 +81,14 @@ links:
 		<ul>
 			{% for project in site.projects %}
 				<li>
-					<h3>{{- project.title -}}</h3>
-					<p><time>Due {{ project.date | date: '%B %-d' }}</time></p>
-					{{ project.content | replace: '<h1', '<h4' | replace: 'h1>', 'h4>' | replace: '<h2', '<h5' | replace: 'h2>', 'h5>' | replace: '<h3', '<h6' | replace: 'h3>', 'h6>' }}
+					<details>
+						<summary>
+							<h3>{{- project.title }} — <time>Due {{ project.date | date: '%B %-d' }}</time></h3>
+						</summary>
+						<article>
+							{{ project.content | replace: '<h1', '<h4' | replace: 'h1>', 'h4>' | replace: '<h2', '<h5' | replace: 'h2>', 'h5>' | replace: '<h3', '<h6' | replace: 'h3>', 'h6>' }}
+						</article>
+					</details>
 				</li>
 			{% endfor %}
 		</ul>

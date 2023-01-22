@@ -63,7 +63,7 @@ links:
 			{%- include sorted_plans.html -%}
 			{% for plan in plans %}
 				<li>
-					<details>
+					<details {%- if forloop.index == plans.size %} open {% endif %}>
 						{%- include auto_date.html -%}
 						<summary>
 							<h3>Week {{- plan.slug }} — <time>{{ dates }}</time></h3>
@@ -81,7 +81,7 @@ links:
 		<ul>
 			{% for project in site.projects %}
 				<li>
-					<details>
+					<details {%- if forloop.index == site.projects.size %} open {% endif %}>
 						<summary>
 							<h3>{{- project.title }} — <time>Due {{ project.date | date: '%B %-d' }}</time></h3>
 						</summary>

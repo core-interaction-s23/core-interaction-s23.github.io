@@ -1,7 +1,6 @@
 $--default-font-fize: 16;
 
 
-
 // For targeting lingering, different behaviors.
 @mixin browser-specific($browsers...) {
 	@if index($browsers, 'firefox') {

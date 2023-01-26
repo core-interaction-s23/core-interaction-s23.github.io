@@ -24,6 +24,7 @@ Add `--unpublished` to show “draft” plans/projects.
 - [ ] Scroll to plan/project when toggling
 - [ ] Nicely transition height when toggling `details`
 - [ ] Bring in some basic Markdown styles/spacing
-- [ ] Add syllabi PDFs and links
+- [ ] Add syllabi PDFs and links, and readings
 - [ ] Make it not boring
 - [ ] ~~Randomize the class list when open/closed~~
+- [ ] Close `details` on project, perhaps. 

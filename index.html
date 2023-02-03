@@ -81,7 +81,7 @@ links:
 		<ul>
 			{% for project in site.projects %}
 				<li>
-					<details {%- if forloop.index == site.projects.size %} open {% endif %}>
+					<details>
 						<summary>
 							<h3>{{- project.title }} — <time>Due {{ project.date | date: '%B %-d' }}</time></h3>
 						</summary>

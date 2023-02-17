@@ -43,6 +43,10 @@ button {
 	margin-bottom: var(--spacing);
 }
 
+del {
+	text-decoration: line-through;
+}
+
 p a {
 	word-break: break-word;
 }

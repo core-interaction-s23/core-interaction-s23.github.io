@@ -51,6 +51,9 @@ p a {
 	word-break: break-word;
 }
 
+p, li { max-width: 65ch }
+
+li li { max-width: 75ch }
 
 
 body {
@@ -193,5 +196,5 @@ code {
 	padding-right:    0.25em;
 	margin-left:      0.1em;
 	margin-right:     0.1em;
-	font-size:        1.1em;
+	font-size:        1em;
 }

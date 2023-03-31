@@ -170,7 +170,6 @@ article h4 {
 
 article h5 {
 	text-decoration: underline;
-
 }
 
 article li {
@@ -189,6 +188,12 @@ li > ul {
 	margin-top: 1em;
 }
 
+pre {
+	tab-size:    2;
+	overflow:    scroll;
+	white-space: pre;
+}
+
 code {
 	background-color: rgba(255, 255 , 255, 0.333);
 	font-family:      monospace;
@@ -198,3 +203,5 @@ code {
 	margin-right:     0.1em;
 	font-size:        1em;
 }
+
+a code { background-color: initial }

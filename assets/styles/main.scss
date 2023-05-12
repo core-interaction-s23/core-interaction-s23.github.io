@@ -184,7 +184,8 @@ article ul {
 }
 
 li > ol,
-li > ul {
+li > ul,
+li > p + p {
 	margin-top: 1em;
 }
 
